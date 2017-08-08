@@ -1,0 +1,8 @@
+alias d="sudo docker"
+alias dp="sudo docker ps"
+alias dpa="sudo docker ps -a"
+alias g="git"
+alias l="ls -lha --color"
+alias v="vim"
+alias sv="sudo vim"
+alias s="sudo"
