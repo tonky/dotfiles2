@@ -6,7 +6,7 @@ fi
 
 if [ -f /usr/bin/apt ]
   then
-    -s $PWD/ubuntu.sh ~/.local.sh
+   ln -s $PWD/ubuntu.sh ~/.local.sh
 fi
 
 rm -rf ~/.vim ; ln -s $PWD/.vim ~/

@@ -21,4 +21,3 @@ f() {
 source ~/.env.sh
 source ~/.alias.sh
 source ~/.local.sh
-
