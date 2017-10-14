@@ -6,8 +6,11 @@ syntax enable
 
 filetype plugin indent on
 
-set expandtab
 autocmd filetype html,xml set listchars-=tab:>.
+
+autocmd filetype haskell nmap <Leader>r :!runhaskell %<cr>
+autocmd filetype go nmap <Leader>r :GoRun %<cr>
+autocmd filetype go nmap <Leader>t :GoTest<cr>
 
 nnoremap ; :
 
@@ -41,6 +44,7 @@ set ch=1
 set smartindent
 set tabstop=4
 set softtabstop=4
+set expandtab
 set shiftwidth=4
 set autoindent
 set copyindent
@@ -48,7 +52,7 @@ set showmatch
 set number
 set ignorecase
 set smartcase
-set smarttab
+" set smarttab
 set hls
 set is
 set novb
@@ -62,8 +66,6 @@ set statusline=%<%f%h%m%r%=%b\ 0x%B\ \ %l,%c%V\ %P
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*     " MacOSX/Linux
 set backupdir=/tmp
 set directory=/tmp
-
-nmap <Leader>r :GoRun %<cr>
 
 set paste
 
@@ -94,3 +96,6 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 nmap ,n :NERDTreeClose<CR>:NERDTreeToggle<CR>
 nmap ,m :NERDTreeClose<CR>:NERDTreeFind<CR>
 nmap ,N :NERDTreeClose<CR>
+
+" Go stuff
+let g:go_fmt_command = "goimports"
