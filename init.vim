@@ -102,6 +102,10 @@ endfunction
 command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 
 let g:deoplete#sources#d#dcd_server_autostart = 1
-let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 0
 let g:deoplete#sources#rust#racer_binary='~/.cargo/bin/racer'
 let g:deoplete#sources#rust#rust_source_path='/usr/lib/rustlib/src/rust/src/'
+
+let g:go_fmt_command = "goimports"
+au FileType go nmap <leader>t :GoTest -short<cr>
+au FileType go nmap <leader>r :GoRun<cr>
