@@ -1,5 +1,5 @@
 colo pablo
-set number
+set nonumber
 set hidden
 set ignorecase
 " neocomplete like
@@ -16,12 +16,13 @@ map <Leader>f :silent %!indent -kr -brf -i8 -st -<cr>
 map <Leader>c :Shell gcc -Wall -lm -lpthread main.c -o /tmp/mc -xc - && /tmp/mc<cr>
 map <Leader>d :!dmd main.d && ./main<cr>
 
-map <M-h> :bp<cr>
-map <M-l> :bn<cr>
+nmap <M-h> :bp<CR>
+nmap <M-l> :bn<CR>
+nmap <M-n> <C-W>w
 
 set tabstop=4
 set shiftwidth=4
-set noexpandtab
+set expandtab
 
 " Path to python interpreter for neovim
 let g:python3_host_prog  = '/usr/bin/python3'
@@ -33,19 +34,25 @@ let g:deoplete#enable_at_startup = 1
 " deoplete-go settings
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:airline#extensions#tabline#enabled = 1
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'zah/nim.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'zah/nim.vim'
 Plug 'scrooloose/syntastic'
 Plug 'fatih/vim-go'
 Plug 'kien/ctrlp.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'idanarye/vim-dutyl'
-Plug 'landaire/deoplete-d'
-Plug 'rust-lang/rust.vim'
-Plug 'sebastianmarkow/deoplete-rust'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'zchee/deoplete-go', { 'do': 'make'}
+" Plug 'idanarye/vim-dutyl'
+" Plug 'landaire/deoplete-d'
+" Plug 'rust-lang/rust.vim'
+" Plug 'sebastianmarkow/deoplete-rust'
+" Plug 'zxqfl/tabnine-vim'
+" Plug 'Zaptic/elm-vim'
 
 " if has('nvim')
 " else
@@ -101,10 +108,7 @@ function! s:ExecuteInShell(command)
 endfunction
 command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 
-let g:deoplete#sources#d#dcd_server_autostart = 1
-let g:rustfmt_autosave = 0
-let g:deoplete#sources#rust#racer_binary='~/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='/usr/lib/rustlib/src/rust/src/'
+let g:rustfmt_autosave = 1
 
 let g:go_fmt_command = "goimports"
 au FileType go nmap <leader>t :GoTest -short<cr>
