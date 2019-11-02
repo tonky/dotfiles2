@@ -1,0 +1,14 @@
+[Unit]
+Description=Set CPU fans profiles
+# After=suspend.target
+
+[Service]
+User=root
+Type=simple
+# Restart=always
+# RestartSec=5
+ExecStart=dell-fan-mon --t_low 50 --t_mid 60 --t_high 80 --mode 0 --discrete_gpu_mode 0 --fan_check_period 1500 --period 3000 --bios_disable_method 1 --jump_temp_delta 50
+# StandardOutput=syslog
+
+[Install]
+WantedBy=multi-user.target

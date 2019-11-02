@@ -1,0 +1,10 @@
+[Unit]
+Description=Stopping of CPU fans
+After=suspend.target hibernate.target hybrid-sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=i8kfan 0 0
+
+[Install]
+WantedBy=multi-user.target suspend.target hibernate.target hybrid-sleep.target

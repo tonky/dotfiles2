@@ -1,0 +1,10 @@
+[Unit]
+Description=undervolt
+After=suspend.target hibernate.target hybrid-sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=undervolt --core -130 --cache -130 --analogio -130 --uncore -130 --gpu -130
+
+[Install]
+WantedBy=multi-user.target suspend.target hibernate.target hybrid-sleep.target
