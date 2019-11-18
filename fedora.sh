@@ -1,5 +1,5 @@
 alias zq="sudo dnf repoquery -l"
-alias zi="sudo dnf install"
+alias zi="sudo dnf install --setopt=install_weak_deps=False"
 alias zr="sudo dnf remove"
 alias zs="sudo dnf search"
 alias zu="sudo dnf update"

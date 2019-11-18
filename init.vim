@@ -38,13 +38,17 @@ let g:airline#extensions#tabline#enabled = 1
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'zah/nim.vim'
 Plug 'scrooloose/syntastic'
 Plug 'fatih/vim-go'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh' }
+Plug 'ionide/Ionide-vim', {'do':  'make fsautocomplete'}
+
+" Plug 'fsharp/vim-fsharp', {'for': 'fsharp', 'do': 'make fsautocomplete' }
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'zchee/deoplete-go', { 'do': 'make'}
 " Plug 'idanarye/vim-dutyl'
@@ -113,3 +117,16 @@ let g:rustfmt_autosave = 1
 let g:go_fmt_command = "goimports"
 au FileType go nmap <leader>t :GoTest -short<cr>
 au FileType go nmap <leader>r :GoRun<cr>
+
+au FileType rust nmap <leader>r :RustRun<cr>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:LanguageClient_serverCommands = {'rust': ['~/.cargo/bin/ra_lsp_server']}
