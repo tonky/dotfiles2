@@ -10,7 +10,7 @@ alias mk="minikube"
 alias kc="kubectl"
 alias pg="pgrep -ifl"
 alias v="nvim"
-alias sv="sudo vim"
+alias sv="sudo nvim"
 alias s="sudo"
 
 alias kga="kubectl get all"
