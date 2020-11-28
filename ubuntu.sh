@@ -1,4 +1,4 @@
 alias zi="sudo apt install"
-alias zr="sudo apt uninstall"
+alias zr="sudo apt remove"
 alias zs="sudo apt search"
-alias zu="sudo apt update"
+alias zu="sudo apt autoremove && sudo apt update && sudo apt upgrade"

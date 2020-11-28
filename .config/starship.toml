@@ -1,0 +1,6 @@
+[kubernetes]
+format = 'on [⛵ $context \($namespace\)](dimmed green) '
+disabled = false
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
+"staging-i.tonkopryadchenko@staging" = "staging"

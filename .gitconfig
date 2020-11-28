@@ -8,7 +8,7 @@
 	interactive = auto
     # status = auto
 [core]
-	editor = vim
+	editor = nvim
 [alias]
     a = add
     aa = add .
@@ -19,6 +19,7 @@
 	c = commit
 	cm = commit -m
 	ca = commit -a -m
+	am = commit --amend
 	co = checkout
     d = diff
     dh = diff HEAD
@@ -40,5 +41,12 @@
 [branch "master"]
     remote = origin
     merge = refs/heads/master
+
 [push]
 	default = simple
+	followTags = true
+
+[includeIf "gitdir:~/work/"]
+    path = ~/work/.gitconfig
+[protocol]
+	version = 2
