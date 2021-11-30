@@ -50,3 +50,8 @@
     path = ~/work/.gitconfig
 [protocol]
 	version = 2
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = master
