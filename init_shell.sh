@@ -21,6 +21,6 @@ rm ~/.alias.sh ; ln -s $PWD/.alias.sh ~/
 rm ~/.zshrc ; ln -s $PWD/.zshrc ~/
 rm ~/.gitconfig ; ln -s $PWD/.gitconfig ~/
 
-ln -s $PWS/.config/starship.conf ~/.config/starship.toml
+ln -s $PWD/.config/starship.conf ~/.config/starship.toml
 mkdir ~/.config/kitty; ln -s $PWD/kitty.conf ~/.config/kitty/kitty.conf
 

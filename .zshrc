@@ -47,3 +47,6 @@ source ~/.os_local.sh
 source ~/.local.sh
 
 eval "$(starship init zsh)"
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin

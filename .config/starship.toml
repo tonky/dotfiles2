@@ -1,6 +1,12 @@
 [kubernetes]
 format = 'on [⛵ $context \($namespace\)](dimmed green) '
 disabled = false
+
 [kubernetes.context_aliases]
 "dev.local.cluster.k8s" = "dev"
-"staging-i.tonkopryadchenko@staging" = "staging"
+"sso-eks-staging-basic" = "stg bsc"
+"sso-eks-staging-admin" = "stg adm"
+"sso-eks-live-basic" = "live bsc"
+
+[aws.region_aliases]
+eu-west-1 = "ew1"

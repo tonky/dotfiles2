@@ -50,3 +50,5 @@
     path = ~/work/.gitconfig
 [protocol]
 	version = 2
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
