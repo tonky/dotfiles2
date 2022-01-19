@@ -41,6 +41,15 @@ bbpi() {
     echo "Done!"
 }
 
+rust_try() {
+    rm -rf /tmp/$1
+    mkdir /tmp/$1
+    cd /tmp/$1
+    cargo init
+    echo "$2 = '*'" >> Cargo.toml
+    code .
+}
+
 source ~/.env.sh
 source ~/.alias.sh
 source ~/.os_local.sh
