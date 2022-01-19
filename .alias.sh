@@ -18,8 +18,8 @@ alias l="exa -1F -L 2 --group-directories-first -blh --git --octal-permissions -
 alias mk="minikube"
 alias kc="kubectl"
 alias pg="pgrep -ifl"
-alias v="nvim"
-alias sv="sudo nvim"
+alias v="vim"
+alias sv="sudo vim"
 alias s="sudo"
 
 alias fd="fdfind"
@@ -44,6 +44,7 @@ alias hda='helm delete -n default `helm ls -n default -q | tr "\n" " "`'
 alias ka="kubectl -n adv"
 alias init_k3s="sudo systemctl start k3s; sudo chmod +r /etc/rancher/k3s/k3s.yaml; export KUBECONFIG=/etc/rancher/k3s/k3s.yaml"
 
+alias k3s_server="sudo /home/tonky/.arkade/bin/k3s server --write-kubeconfig-mode 644"
 alias scs="sudo systemctl status"
 alias scon="sudo systemctl start"
 alias scoff="sudo systemctl stop"

@@ -1,10 +1,18 @@
 [Unit]
 Description=undervolt
-After=suspend.target hibernate.target hybrid-sleep.target
+After=suspend.target
+After=hibernate.target
+After=hybrid-sleep.target
 
 [Service]
 Type=oneshot
-ExecStart=undervolt --core -130 --cache -130 --analogio -130 --uncore -130 --gpu -130
+# If you have installed undervolt globally (via sudo pip install):
+ExecStart=/usr/local/bin/undervolt -v --gpu -80 --core -110 --cache -110 --uncore -80 --analogio -80 -p1 55 60 -p2 65 20 --temp 95
+# If you want to run from source:
+# ExecStart=/path/to/undervolt.py -v --core -150 --cache -150 --gpu -100
 
 [Install]
-WantedBy=multi-user.target suspend.target hibernate.target hybrid-sleep.target
+WantedBy=multi-user.target
+WantedBy=suspend.target
+WantedBy=hibernate.target
+WantedBy=hybrid-sleep.target
